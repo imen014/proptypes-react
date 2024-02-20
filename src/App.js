@@ -1,23 +1,34 @@
-import logo from './logo.svg';
 import './App.css';
+import Card from './components/Card';
+import styled from 'styled-components';
 
 function App() {
+
+  const StyledDiv = styled.p`
+  background-color:green;
+  color:pink;
+  padding:10px
+  
+  `;
+  let color = "blue";
+
+  const StyledParaghraph = styled.p`
+  background-color:yellow;
+  color:${color};
+  padding:20px
+
+  `;
+
+  
+
+ let email = "email@gmail.com"
+  let age = 25
+  let phone = "+21693090615"
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Card  email={email}  age={age}   phone={phone} />
+      <StyledDiv>test</StyledDiv>
+      <StyledParaghraph $color = {color}>My P</StyledParaghraph>
     </div>
   );
 }
